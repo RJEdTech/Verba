@@ -296,6 +296,16 @@ body.light .more a{color:#A81028}
 </style>
 </head>
 <body>
+<script>
+/* Light/dark follows the operating system setting. No in-page toggle by design. */
+(function(){
+  var mq = window.matchMedia("(prefers-color-scheme: light)");
+  function apply(){ document.body.classList.toggle("light", mq.matches); }
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+  else if (mq.addListener) mq.addListener(apply);
+})();
+</script>
 <div class="ctr">
   <header class="site-header">
     <div class="hl">
@@ -306,7 +316,6 @@ body.light .more a{color:#A81028}
       </div>
     </div>
     <div class="hdr-tools">
-      <button class="hdr-pill" id="themeBtn" type="button">&#9788; Light</button>
     </div>
   </header>
 
@@ -1724,13 +1733,6 @@ body.light .more a{color:#A81028}
   el('tab-look').addEventListener('click', function () { setTab('look'); });
   el('tab-practice').addEventListener('click', function () { setTab('practice'); });
 
-  function setTheme(light) {
-    document.body.classList.toggle('light', light);
-    el('themeBtn').innerHTML = light ? '&#9790; Dark' : '&#9788; Light';
-    try { localStorage.setItem('verba-theme', light ? 'light' : 'dark'); } catch (e) {}
-  }
-  try { setTheme(localStorage.getItem('verba-theme') === 'light'); } catch (e) { setTheme(false); }
-  el('themeBtn').addEventListener('click', function () { setTheme(!document.body.classList.contains('light')); });
 
   out.innerHTML = '<p class="status">Loading the dictionary&hellip;</p>';
   window.Verba.ready = V.load().then(function () {
