@@ -293,6 +293,54 @@ body.light .more a{color:#A81028}
   .tab{font-size:14px;padding:12px 10px}.deckhead{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ---- Macrons tab ---------------------------------------------------- */
+.mac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:8px;margin:12px 0 4px}
+.mac-key{border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:10px 8px;text-align:center;
+  background:rgba(255,255,255,.03)}
+body.light .mac-key{border-color:rgba(0,0,0,.10);background:rgba(0,0,0,.02)}
+.mac-key b{display:block;font-size:1.5rem;line-height:1.25;color:#C11430}
+.mac-key span{font-size:11px;color:#8b8b96}
+body.light .mac-key span{color:#6d6d78}
+.mac-pairs{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+.mac-pairs td,.mac-pairs th{padding:7px 9px;border-bottom:1px solid rgba(255,255,255,.07);text-align:left;
+  vertical-align:top}
+body.light .mac-pairs td,body.light .mac-pairs th{border-bottom-color:rgba(0,0,0,.07)}
+.mac-pairs th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#8b8b96;font-weight:700}
+.mac-pairs .lat{font-size:1.12rem;white-space:nowrap}
+.mac-probe{font:inherit;font-size:1.5rem;text-align:center;width:92px;padding:8px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.20);background:transparent;color:inherit}
+body.light .mac-probe{border-color:rgba(0,0,0,.20)}
+.mac-verdict{margin-top:11px;padding:11px 13px;border-radius:9px;font-size:14px;display:none}
+.mac-verdict.ok{display:block;background:rgba(40,160,90,.13);border:1px solid rgba(40,160,90,.5)}
+.mac-verdict.no{display:block;background:rgba(200,140,20,.13);border:1px solid rgba(200,140,20,.5)}
+.mac-target{font-size:1.9rem;letter-spacing:.01em;margin:6px 0 4px;min-height:2.3rem}
+.mac-target .ch{padding:1px 0}
+.mac-target .ch.done{color:#3ea06a}
+.mac-target .ch.err{color:#fff;background:#C11430;border-radius:3px}
+.mac-target .ch.cur{border-bottom:2px solid #C11430}
+.mac-gloss{color:#8b8b96;font-size:14px;margin-bottom:10px}
+body.light .mac-gloss{color:#6d6d78}
+.mac-in{font:inherit;font-size:1.15rem;width:100%;padding:10px 12px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.18);background:transparent;color:inherit}
+body.light .mac-in{border-color:rgba(0,0,0,.18)}
+.mac-stats{display:flex;gap:20px;margin-top:12px;font-size:13px;color:#8b8b96;flex-wrap:wrap}
+body.light .mac-stats{color:#6d6d78}
+.mac-stats b{color:inherit;font-size:1.15rem;display:block}
+.mac-note{font-size:13px;color:#8b8b96;line-height:1.55}
+body.light .mac-note{color:#6d6d78}
+.mac-warn{border-left:3px solid #C11430;padding:9px 12px;margin:12px 0;font-size:13.5px;line-height:1.55;
+  background:rgba(193,20,48,.07);border-radius:0 8px 8px 0}
+.mac-kbd{display:inline-block;padding:1px 6px;border:1px solid rgba(255,255,255,.22);border-radius:5px;
+  font-size:12px;font-family:ui-monospace,Menlo,Consolas,monospace}
+body.light .mac-kbd{border-color:rgba(0,0,0,.22)}
+.mac-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.mac-btn{padding:9px 15px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:transparent;
+  color:inherit;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+body.light .mac-btn{border-color:rgba(0,0,0,.18)}
+.mac-btn:hover{border-color:#C11430;color:#C11430}
+.mac-btn.pri{background:#C11430;border-color:#C11430;color:#fff}
+.mac-btn.pri:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -322,6 +370,7 @@ body.light .more a{color:#A81028}
   <div class="tabs">
     <button class="tab a" id="tab-look" type="button">Look up a word</button>
     <button class="tab" id="tab-practice" type="button">Practice</button>
+    <button class="tab" id="tab-macrons" type="button">Macrons</button>
   </div>
 
   <!-- ============ LOOK UP ============ -->
@@ -489,6 +538,120 @@ body.light .more a{color:#A81028}
         itself is what builds the memory, and getting it wrong does no harm here. Every word you
         miss is rescheduled to come back sooner; every word you know is pushed further out.</p>
       <div id="sBody"></div>
+    </div>
+
+  </section>
+
+  <!-- ============ MACRONS ============ -->
+  <section id="panel-macrons" hidden>
+
+    <div class="card">
+      <h2>Macrons</h2>
+      <p class="mac-note" style="margin-top:8px">A macron marks a <b>long vowel</b> &mdash;
+      <b>&#257; &#275; &#299; &#333; &#363;</b>. It is not decoration. It separates words that are
+      otherwise spelled identically, and it is how you can see a case ending or a tense that the
+      bare letters hide.</p>
+      <table class="mac-pairs">
+        <thead><tr><th>Same letters</th><th>Means</th><th>With a macron</th><th>Means</th></tr></thead>
+        <tbody>
+          <tr><td class="lat">liber</td><td>book</td><td class="lat">l&#299;ber</td><td>free</td></tr>
+          <tr><td class="lat">malum</td><td>evil</td><td class="lat">m&#257;lum</td><td>apple</td></tr>
+          <tr><td class="lat">os</td><td>bone</td><td class="lat">&#333;s</td><td>mouth, face</td></tr>
+          <tr><td class="lat">venit</td><td>he comes</td><td class="lat">v&#275;nit</td><td>he came</td></tr>
+          <tr><td class="lat">latus</td><td>side</td><td class="lat">l&#257;tus</td><td>wide</td></tr>
+          <tr><td class="lat">populus</td><td>a people</td><td class="lat">p&#333;pulus</td><td>a poplar tree</td></tr>
+          <tr><td class="lat">hic</td><td>this man</td><td class="lat">h&#299;c</td><td>here</td></tr>
+          <tr><td class="lat">puella</td><td>the girl (subject)</td><td class="lat">puell&#257;</td><td>by/with the girl</td></tr>
+        </tbody>
+      </table>
+      <p class="mac-note" style="margin-top:12px">Looking a word up here does <b>not</b> require macrons
+      &mdash; Verba ignores them when it searches, so <i>am&#257;v&#299;</i> and <i>amavi</i> both work.
+      You need them for <b>writing</b>.</p>
+    </div>
+
+    <div class="card">
+      <h2>First &middot; can your keyboard make one?</h2>
+      <p class="mac-note" style="margin-top:8px">The <b>United States-International</b> keyboard the
+      school recommends for French and Spanish <b>cannot produce macrons</b>. There is no long-vowel
+      accent on it. For Latin you need one more keyboard, and you switch to it with
+      <span class="mac-kbd">Windows</span> + <span class="mac-kbd">Space</span>.</p>
+      <div class="mac-row">
+        <span class="mac-note">Click the box and press <span class="mac-kbd">Alt Gr</span> +
+        <span class="mac-kbd">a</span> (the right-hand Alt key):</span>
+        <input class="mac-probe" id="macProbe" maxlength="1" spellcheck="false" autocomplete="off"
+               aria-label="Macron keyboard test">
+        <button class="mac-btn" id="macProbeClear" type="button">Clear</button>
+      </div>
+      <div class="mac-verdict" id="macVerdict"></div>
+
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer;font-weight:600">How to add the macron keyboard</summary>
+        <p class="mac-note" style="margin-top:8px">You are adding the <b>Hawaiian</b> keyboard. That
+        sounds odd for a Latin class, and it is &mdash; but it is the one Windows layout that puts
+        long vowels on <span class="mac-kbd">Alt Gr</span> without changing anything else. Every letter,
+        digit and punctuation mark stays exactly where it is printed. Nothing downloads, and this works
+        on a school laptop without an admin password.</p>
+        <ol class="mac-note" style="margin:10px 0 0 20px;line-height:1.9">
+          <li>Press <span class="mac-kbd">Windows</span> + <span class="mac-kbd">i</span> to open Settings.</li>
+          <li>Go to <b>Time &amp; language</b> &rsaquo; <b>Language &amp; region</b>.</li>
+          <li>Click <b>Add a language</b>, search for <b>Hawaiian</b>, and add it.
+              (Do not change your Windows display language.)</li>
+          <li>Press <span class="mac-kbd">Windows</span> + <span class="mac-kbd">Space</span> to switch
+              to it, then run the test above.</li>
+        </ol>
+        <div class="mac-warn"><b>One quirk to know.</b> On the Hawaiian layout the apostrophe key
+        produces <b>&#699;</b> (an &#699;okina), not a straight apostrophe. Latin does not use
+        apostrophes, so this rarely matters &mdash; but if you need a real one, it is
+        <span class="mac-kbd">Shift</span> + <span class="mac-kbd">Alt Gr</span> +
+        <span class="mac-kbd">'</span>. Switch back with
+        <span class="mac-kbd">Windows</span> + <span class="mac-kbd">Space</span>.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>The whole layout, in five keys</h2>
+      <p class="mac-note">Hold <span class="mac-kbd">Alt Gr</span> and press the vowel. Add
+      <span class="mac-kbd">Shift</span> for the capital. Nothing else on the keyboard changes.</p>
+      <div class="mac-grid">
+        <div class="mac-key"><b>&#257;</b><span>Alt Gr + a</span></div>
+        <div class="mac-key"><b>&#275;</b><span>Alt Gr + e</span></div>
+        <div class="mac-key"><b>&#299;</b><span>Alt Gr + i</span></div>
+        <div class="mac-key"><b>&#333;</b><span>Alt Gr + o</span></div>
+        <div class="mac-key"><b>&#363;</b><span>Alt Gr + u</span></div>
+      </div>
+      <div class="mac-grid">
+        <div class="mac-key"><b>&#256;</b><span>+ Shift</span></div>
+        <div class="mac-key"><b>&#274;</b><span>+ Shift</span></div>
+        <div class="mac-key"><b>&#298;</b><span>+ Shift</span></div>
+        <div class="mac-key"><b>&#332;</b><span>+ Shift</span></div>
+        <div class="mac-key"><b>&#362;</b><span>+ Shift</span></div>
+      </div>
+      <div class="mac-warn"><b>Why not the Word trick?</b> Typing <code>016B</code> then
+      <span class="mac-kbd">Alt</span> + <span class="mac-kbd">X</span> does give you <b>&#363;</b>,
+      and it is fine when you are writing in Word. It is a Word feature, though &mdash; it does nothing
+      in a browser, and nothing inside <b>LockDown Browser</b>. A keyboard layout works everywhere,
+      including in a quiz.</div>
+    </div>
+
+    <div class="card">
+      <h2>Practice</h2>
+      <p class="mac-note">Type the Latin exactly as shown, macrons and all. Pasting is off &mdash;
+      the point is the keys.</p>
+      <div class="mac-row" style="margin-bottom:6px">
+        <button class="mac-btn pri" id="macStart" type="button">Start</button>
+        <button class="mac-btn" id="macSkip" type="button">Skip word</button>
+        <label class="mac-note"><input type="checkbox" id="macPairs"> minimal pairs only</label>
+      </div>
+      <div class="mac-target" id="macTarget"><span class="mac-note">Press <b>Start</b>.</span></div>
+      <div class="mac-gloss" id="macGloss"></div>
+      <input class="mac-in" id="macIn" spellcheck="false" autocomplete="off" autocorrect="off"
+             autocapitalize="off" aria-label="Type the Latin word shown above" disabled>
+      <div class="mac-stats">
+        <div><b id="macDone">0</b>words</div>
+        <div><b id="macAcc">&mdash;</b>accuracy</div>
+        <div><b id="macStreak">0</b>streak</div>
+        <div><b id="macBest">0</b>best streak</div>
+      </div>
     </div>
 
   </section>
@@ -1723,8 +1886,159 @@ body.light .more a{color:#A81028}
 
   /* ---------- tabs, theme, boot ---------- */
 
+
+  /* ---------- Macrons tab -------------------------------------------------
+     Long vowels are not decoration: they separate identically spelled words
+     and expose case and tense. US-International has no long-vowel accent at
+     all, so Latin needs one more layout. Hawaiian is the light-touch one -
+     Alt Gr + vowel, nothing else on the board moves.                       */
+  var MAC_PAIRS = [
+    ['mālum', 'apple  (malum = evil)'],
+    ['līber', 'free  (liber = book)'],
+    ['ōs', 'mouth, face  (os = bone)'],
+    ['vēnit', 'he came  (venit = he comes)'],
+    ['lātus', 'wide  (latus = side)'],
+    ['pōpulus', 'a poplar tree  (populus = a people)'],
+    ['hīc', 'here  (hic = this man)'],
+    ['puellā', 'by/with the girl  (puella = the girl)'],
+    ['rosā', 'by/with the rose  (rosa = the rose)'],
+    ['lēvis', 'smooth  (levis = light in weight)'],
+    ['occīdo', 'I kill  (occido = I fall)'],
+    ['fūgit', 'he fled  (fugit = he flees)']
+  ];
+  var MAC_FORMS = [
+    ['amāre', 'to love'],
+    ['amāvī', 'I have loved'],
+    ['amāmus', 'we love'],
+    ['monēre', 'to warn'],
+    ['audīre', 'to hear'],
+    ['vīdī', 'I saw'],
+    ['fēcī', 'I made'],
+    ['laudāvērunt', 'they praised'],
+    ['amīcī', 'of the friend'],
+    ['dominā', 'by/with the mistress'],
+    ['nātūra', 'nature'],
+    ['lūna', 'moon'],
+    ['fābula', 'story'],
+    ['grātiās', 'thanks'],
+    ['hōra', 'hour'],
+    ['vōx', 'voice'],
+    ['rēx', 'king'],
+    ['lēx', 'law'],
+    ['spēs', 'hope'],
+    ['rēs', 'thing'],
+    ['diēs', 'day'],
+    ['fidēs', 'faith'],
+    ['magnā', 'great (abl. fem.)'],
+    ['cūra', 'care'],
+    ['vīta', 'life'],
+    ['īre', 'to go']
+  ];
+
+  function initMacrons() {
+    var probe = el('macProbe'), verdict = el('macVerdict');
+    if (!probe) return;
+
+    probe.addEventListener('input', function () {
+      var v = probe.value;
+      if (!v) { verdict.className = 'mac-verdict'; return; }
+      if ('āĀ'.indexOf(v) > -1) {
+        verdict.className = 'mac-verdict ok';
+        verdict.innerHTML = '<b>That is a macron.</b> You are on a layout that can type '
+          + 'ā ē ī ō ū. Practice is below.';
+      } else if (v === 'a' || v === 'A') {
+        verdict.className = 'mac-verdict no';
+        verdict.innerHTML = '<b>That gave a plain a.</b> Alt Gr is doing nothing, so you are still on '
+          + 'a keyboard without macrons. Press <span class="mac-kbd">Windows</span> + '
+          + '<span class="mac-kbd">Space</span> to switch, or open the steps below to add one.';
+      } else if (v === 'á' || v === 'ä' || v === 'ã' || v === 'à') {
+        verdict.className = 'mac-verdict no';
+        verdict.innerHTML = '<b>Close — but that is the wrong accent.</b> You got “'
+          + esc(v) + '”, which is what US-International gives you. A macron is a flat bar: '
+          + '<b>ā</b>. You need the Hawaiian keyboard as well.';
+      } else {
+        verdict.className = 'mac-verdict no';
+        verdict.innerHTML = 'That gave “' + esc(v) + '”. Expected <b>ā</b>. '
+          + 'Check you held the <i>right-hand</i> Alt key.';
+      }
+    });
+    el('macProbeClear').addEventListener('click', function () {
+      probe.value = ''; verdict.className = 'mac-verdict'; probe.focus();
+    });
+
+    var m = { pool: [], i: 0, word: '', gloss: '', done: 0, ok: 0, chars: 0, errs: 0,
+              streak: 0, best: 0, seen: 0, live: false };
+    var tgt = el('macTarget'), gloss = el('macGloss'), inp = el('macIn');
+
+    function shuffle(a) {
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+    function build() {
+      var src = el('macPairs').checked ? MAC_PAIRS.slice() : MAC_PAIRS.concat(MAC_FORMS);
+      m.pool = shuffle(src); m.i = 0;
+    }
+    function draw() {
+      var typed = inp.value, html = '';
+      for (var i = 0; i < m.word.length; i++) {
+        var cls = 'ch';
+        if (i < typed.length) cls += (typed[i] === m.word[i]) ? ' done' : ' err';
+        else if (i === typed.length) cls += ' cur';
+        html += '<span class="' + cls + '">' + esc(m.word[i]) + '</span>';
+      }
+      tgt.innerHTML = html;
+    }
+    function next() {
+      if (m.i >= m.pool.length) { shuffle(m.pool); m.i = 0; }
+      var row = m.pool[m.i++];
+      m.word = row[0]; m.gloss = row[1]; m.seen = 0;
+      inp.value = ''; gloss.textContent = m.gloss; draw(); inp.focus();
+    }
+    function stats() {
+      el('macDone').textContent = m.done;
+      el('macStreak').textContent = m.streak;
+      el('macBest').textContent = m.best;
+      var tot = m.chars + m.errs;
+      el('macAcc').textContent = tot ? Math.round(m.chars / tot * 100) + '%' : '—';
+    }
+
+    el('macStart').addEventListener('click', function () {
+      build(); m.live = true; inp.disabled = false; next(); stats();
+    });
+    el('macSkip').addEventListener('click', function () {
+      if (!m.live) return;
+      m.streak = 0; next(); stats();
+    });
+    el('macPairs').addEventListener('change', function () { if (m.live) { build(); next(); } });
+
+    inp.addEventListener('paste', function (e) { e.preventDefault(); });
+    inp.addEventListener('drop', function (e) { e.preventDefault(); });
+    inp.addEventListener('input', function () {
+      if (!m.live) return;
+      var v = inp.value;
+      /* More than one new character at a time is pasted text, not typing. */
+      if (v.length - m.seen > 1) { inp.value = v.slice(0, m.seen); draw(); return; }
+      if (v.length > m.seen) {
+        for (var i = m.seen; i < v.length; i++) {
+          if (v[i] === m.word[i]) { m.chars++; m.streak++; if (m.streak > m.best) m.best = m.streak; }
+          else { m.errs++; m.streak = 0; }
+        }
+      }
+      m.seen = v.length;
+      draw(); stats();
+      if (v.length >= m.word.length) {
+        m.done++;
+        if (v === m.word) m.ok++;
+        stats();
+        setTimeout(next, 260);
+      }
+    });
+  }
+
   function setTab(name) {
-    ['look', 'practice'].forEach(function (t) {
+    ['look', 'practice', 'macrons'].forEach(function (t) {
       el('tab-' + t).classList.toggle('a', t === name);
       el('panel-' + t).hidden = t !== name;
     });
@@ -1732,6 +2046,8 @@ body.light .more a{color:#A81028}
   }
   el('tab-look').addEventListener('click', function () { setTab('look'); });
   el('tab-practice').addEventListener('click', function () { setTab('practice'); });
+  el('tab-macrons').addEventListener('click', function () { setTab('macrons'); });
+  initMacrons();
 
 
   out.innerHTML = '<p class="status">Loading the dictionary&hellip;</p>';
