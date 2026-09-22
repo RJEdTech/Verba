@@ -656,6 +656,37 @@ body.light .mac-btn{border-color:rgba(0,0,0,.18)}
 
   </section>
 
+<!--RJLANG-->
+<section class="rj-lang" aria-label="Language tools for students">
+<style>
+.rj-lang{max-width:1000px;margin:48px auto 0;padding:28px 20px 40px;border-top:1px solid rgba(128,128,128,.28);font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;box-sizing:border-box;}
+.rj-lang *{box-sizing:border-box;}
+.rj-lang h2{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C11430;margin:0 0 6px;}
+.rj-lang .rj-l-sub{font-size:.85rem;line-height:1.5;opacity:.7;margin:0 0 15px;max-width:60ch;}
+.rj-lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:10px;}
+.rj-l{display:block;padding:13px 15px;border:1px solid rgba(128,128,128,.28);border-radius:8px;text-decoration:none;color:inherit;background:rgba(128,128,128,.05);transition:border-color .15s,transform .15s;}
+.rj-l:hover{border-color:#C11430;transform:translateY(-1px);}
+.rj-l .rj-l-t{font-weight:650;font-size:.95rem;display:flex;align-items:center;gap:6px;color:inherit;line-height:1.25;}
+.rj-l .rj-l-a{color:#C11430;transition:transform .15s;font-weight:700;}
+.rj-l:hover .rj-l-a{transform:translateX(3px);}
+.rj-l .rj-l-d{font-size:.8rem;line-height:1.42;margin-top:5px;opacity:.72;}
+.rj-l.is-here{border-color:#C11430;background:rgba(193,20,48,.10);cursor:default;}
+.rj-l.is-here:hover{transform:none;}
+.rj-l-here{margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#C11430;border:1px solid #C11430;border-radius:99px;padding:2px 8px;white-space:nowrap;}
+.rj-lang-foot{margin-top:16px;font-size:.72rem;opacity:.55;}
+</style>
+  <h2>Language tools</h2>
+  <p class="rj-l-sub">Free, made here at Regis Jesuit, and they run entirely in your browser &mdash;
+  no accounts, and nothing you type is sent anywhere.</p>
+  <div class="rj-lang-grid">
+    <a class="rj-l" href="https://rjedtech.github.io/Raider-Teclado/"><div class="rj-l-t">Raider Teclado <span class="rj-l-a">&rarr;</span></div><div class="rj-l-d">Type Spanish accents, ñ, ¿ and ¡ on a US keyboard.</div></a>
+    <a class="rj-l" href="https://rjedtech.github.io/Raider-Clavier/"><div class="rj-l-t">Raider Clavier <span class="rj-l-a">&rarr;</span></div><div class="rj-l-d">Type French accents — é è à ç ê ë ô û — on a US keyboard.</div></a>
+    <div class="rj-l is-here"><div class="rj-l-t">Verba<span class="rj-l-here">You&rsquo;re here</span></div><div class="rj-l-d">Latin dictionary, practice, and how to type macrons.</div></div>
+  </div>
+  <div class="rj-lang-foot">Regis Jesuit &middot; Educational Technology</div>
+</section>
+<!--/RJLANG-->
+
   <p class="credit">
     Dictionary and morphology by William Whitaker (1936&ndash;2010), released for free and unrestricted
     use. Parsing logic ported to JavaScript from
