@@ -1,0 +1,45 @@
+Verba
+This repository combines RJ Ed Tech's own work with outside work that
+is NOT RJ's. Each part keeps its own terms.
+
+1. RJ Ed Tech's own work: the site, interface, teaching features and
+   text written for Verba.
+   Copyright (c) 2026 Jason Beyer, RJ Ed Tech
+   Licensed under Creative Commons Attribution-NonCommercial 4.0
+   International (CC BY-NC 4.0):
+   https://creativecommons.org/licenses/by-nc/4.0/legalcode
+   Free to share and adapt for non-commercial use, with credit to
+   "Verba, RJ Ed Tech" and a link to https://rjedtech.github.io/Verba/.
+
+2. Whitaker's Words dictionary and morphological data, by William
+   Whitaker (1936-2010), who released it for free and unrestricted use.
+   Original program: https://github.com/mk270/whitakers-words
+   RJ Ed Tech claims no ownership of this data.
+
+3. The Latin parser is a JavaScript port of blagae/whitakers_words
+   (https://github.com/blagae/whitakers_words), which is released under
+   the MIT License. That project's MIT terms apply to the ported parser
+   code, and its notice must be kept with any copy:
+
+   MIT License
+   Copyright (c) the whitakers_words contributors
+   (https://github.com/blagae/whitakers_words)
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software without restriction, including
+   without limitation the rights to use, copy, modify, merge, publish,
+   distribute, sublicense, and/or sell copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   The above copyright notice and this permission notice shall be
+   included in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

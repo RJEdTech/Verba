@@ -103,3 +103,7 @@ Dictionary and morphological data by **William Whitaker (1936–2010)**, release
 ---
 
 Regis Jesuit High School · Educational Technology
+
+## License
+
+RJ Ed Tech's own site and teaching features: © 2026 Jason Beyer, RJ Ed Tech, [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Whitaker's dictionary data and the parser ported from [blagae/whitakers_words](https://github.com/blagae/whitakers_words) (MIT) are not RJ's and keep their own terms. See [LICENSE](LICENSE).
